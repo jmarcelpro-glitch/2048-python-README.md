@@ -37,17 +37,4 @@ class Jeu2048:
 
 
             import random
-def partie():
-pass
-def creer_grille n = 4 ) :
-# 4x4 remplie de zéros (cases vides
-return [[0]*n for in range(n)] -
-def ajout_tuile (grille):
-tuile=random.randint(2 and 4)
-pass
-def deplacer_tuile(grille, orientation):
-pass
-def score(grille):
-pass
-def relancer_partie():
-pass
+
