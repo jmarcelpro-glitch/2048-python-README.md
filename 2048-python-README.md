@@ -1,38 +1,39 @@
-import tkinter as tk   # Bibliothèque pour créer l'interface graphique
-import random          # Pour générer des tuiles aléatoires
+import tkinter as tk   # Import de la bibliothèque graphique Tkinter
+import random          # Import pour générer du hasard (positions et valeurs)
 
-SIZE = 4  # Taille de la grille (4x4)
+TAILLE = 4  # Taille de la grille (4 lignes et 4 colonnes)
 
 
-class Game2048:
-    def __init__(self, root):
-        self.root = root                     # Fenêtre principale
-        self.root.title("2048")              # Titre de la fenêtre
+class Jeu2048:
+    def __init__(self, fenetre):
+        # On stocke la fenêtre principale
+        self.fenetre = fenetre
+        self.fenetre.title("2048")  # Titre de la fenêtre
 
-        # Création de la grille 4x4 remplie de 0
-        self.grid = [[0]*SIZE for _ in range(SIZE)]
+        # Création de la grille logique (matrice 4x4 remplie de 0)
+        self.grille = [[0 for _ in range(TAILLE)] for _ in range(TAILLE)]
 
-        # Frame (conteneur) pour afficher la grille
-        self.frame = tk.Frame(root)
-        self.frame.pack()
+        # Création d'un conteneur pour afficher la grille
+        self.cadre = tk.Frame(fenetre)
+        self.cadre.pack()
 
-        # Création des cellules graphiques (labels)
-        self.cells = []
-        for i in range(SIZE):                # Parcourt les lignes
-            row = []
-            for j in range(SIZE):            # Parcourt les colonnes
-                label = tk.Label(
-                    self.frame,
-                    text="",                 # Texte vide au départ
+        # Création des cases visuelles (labels)
+        self.cellules = []
+        for i in range(TAILLE):  # Pour chaque ligne
+            ligne = []
+            for j in range(TAILLE):  # Pour chaque colonne
+                etiquette = tk.Label(
+                    self.cadre,
+                    text="",              # Texte vide au départ
                     width=5,
                     height=2,
                     font=("Arial", 24),
                     borderwidth=2,
                     relief="solid"
                 )
-                label.grid(row=i, column=j)  # Placement dans la grille
-                row.append(label)
-            self.cells.append(row)
+                etiquette.grid(row=i, column=j)  # Placement dans la grille graphique
+                ligne.append(etiquette)          # On ajoute la case dans la ligne
+            self.cellules.append(ligne)          # On ajoute la ligne à la grille visuelle
 
 
             import random
