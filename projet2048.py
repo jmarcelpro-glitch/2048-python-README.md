@@ -11,7 +11,7 @@ grille = [[0, 0, 0, 0],
 score = 0
 en_jeu = False
 
-# couleurs pour chaque valeur de tuile , les couleurs sont prit de internet
+# couleurs pour chaque valeur de tuile , les couleurs sont prit surinternet
 couleurs = {
     0:    "#e99ae0",
     2:    "#f7c4f2",
@@ -227,7 +227,7 @@ def bouton_play():
 def jouer(direction):
     global en_jeu
     if not en_jeu:
-        messagebox.showinfo("2048", "Cliquez sur Play pour commencer !")
+        messagebox.showinfo("2048", "Cliquez sur Play pour commencer !")      # showinfo : internet
         return
     modifie = direction()
     if modifie:
@@ -296,7 +296,7 @@ fenetre.configure(bg="#e993e5")  # #e993e5: internet
 fenetre.resizable(False, False)   #  e993e5 : internet  
 
 tk.Label(fenetre, text="2048", font=("Arial", 40, "bold"),         # bold : internet 
-         bg="#e993e5", fg="#070105").pack(pady=10)      # 070105 : internet
+         bg="#e993e5", fg="#070105").pack(pady=10)      # 070105  et .pack(pady=10): internet 
 
 label_score = tk.Label(fenetre, text="Score : 0", font=("Arial", 16),
                        bg="#e993e5", fg="#070105")
