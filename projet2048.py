@@ -227,7 +227,7 @@ def bouton_play():
 def jouer(direction):
     global en_jeu
     if not en_jeu:
-        messagebox.showinfo("2048", "Cliquez sur Play pour commencer !")      # showinfo : internet
+        messagebox.showinfo("2048", "Cliquez sur Play pour commencer !")         # showinfo : internet
         return
     modifie = direction()
     if modifie:
@@ -292,12 +292,12 @@ def bouton_exit():
 
 fenetre = tk.Tk()
 fenetre.title("2048")
-fenetre.configure(bg="#e993e5")  # #e993e5: internet 
-fenetre.resizable(False, False)   #  e993e5 : internet  
+fenetre.configure(bg="#e993e5")           # #e993e5: internet 
+fenetre.resizable(False, False)           #  e993e5 : internet  
 
 tk.Label(fenetre, text="2048", font=("Arial", 40, "bold"),         # bold : internet 
-         bg="#e993e5", fg="#070105").pack(pady=10)      # 070105  et .pack(pady=10): internet 
-
+         bg="#e993e5", fg="#070105").pack(pady=10)                 # 070105  et .pack(pady=10): internet 
+ 
 label_score = tk.Label(fenetre, text="Score : 0", font=("Arial", 16),
                        bg="#e993e5", fg="#070105")
 label_score.pack()  
@@ -313,10 +313,10 @@ for i in range(4): #Boucle sur les lignes
     for j in range(4):
         l = tk.Label(cadre_grille, text="", width=4, height=2,
                      bg=couleurs[0], font=("Arial", 28, "bold")
-                     relief="flat")    #relief ,supprime les bordures (style plat) : internet 
-        l.grid(row=i, column=j, padx=6, pady=6)    # grid : internet
-        ligne_labels.append(l)
-    labels.append(ligne_labels)
+                     relief="flat")                     #relief ,supprime les bordures (style plat) : internet 
+        l.grid(row=i, column=j, padx=6, pady=6)         # grid : position dans la grille  sert à organiser le tableau : verifier sur internet 
+        ligne_labels.append(l)                          # Ajoute la case dans la ligne
+    labels.append(ligne_labels)                         #Ajoute la ligne dans la grille
 
 # boutons de direction , inspirer d'un article sur internet 
 cadre_dir = tk.Frame(fenetre, bg="#e993e5")  
@@ -336,7 +336,7 @@ tk.Button(cadre_dir, text="→", width=4, font=("Arial", 14, "bold"),
           command=lambda: jouer(deplacer_droite)).grid(row=1, column=2, padx=4, pady=4)
 
 # boutons de controle
-cadre_ctrl = tk.Frame(fenetre, bg="#e993e5")   # frame : internet
+cadre_ctrl = tk.Frame(fenetre, bg="#e993e5")              # frame : internet
 cadre_ctrl.pack(pady=12)
 
 tk.Button(cadre_ctrl, text="🌸Play", width=7, font=("Arial", 12, "bold"),
@@ -346,7 +346,7 @@ tk.Button(cadre_ctrl, text="🐚Save", width=7, font=("Arial", 12, "bold"),
 tk.Button(cadre_ctrl, text="🌊Load", width=7, font=("Arial", 12, "bold"),
           bg="#f63ba8", fg="white", command=bouton_load).grid(row=0, column=2, padx=5)
 tk.Button(cadre_ctrl, text="🐠Exit", width=7, font=("Arial", 12, "bold"),
-          bg="#f63ba8", fg="white", command=bouton_exit).grid(row=0, column=3, padx=5)       # grid : position dans la grille : verifier sur internet
+          bg="#f63ba8", fg="white", command=bouton_exit).grid(row=0, column=3, padx=5)      
 
 # touches du clavier
 fenetre.bind("<Left>",  lambda e: jouer(deplacer_gauche))     
@@ -354,4 +354,4 @@ fenetre.bind("<Right>", lambda e: jouer(deplacer_droite))
 fenetre.bind("<Up>",    lambda e: jouer(deplacer_haut))
 fenetre.bind("<Down>",  lambda e: jouer(deplacer_bas))
 
-fenetre.mainloop()   #  mainloop : internet
+fenetre.mainloop()                                        #  mainloop : internet
