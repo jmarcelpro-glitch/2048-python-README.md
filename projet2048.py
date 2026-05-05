@@ -308,19 +308,19 @@ cadre_grille.pack(padx=20, pady=10)
 
 # creation des labels (cases)
 labels = []
-for i in range(4):
-    ligne_labels = []
+for i in range(4): #Boucle sur les lignes
+    ligne_labels = []  # Liste temporaire pour une ligne
     for j in range(4):
         l = tk.Label(cadre_grille, text="", width=4, height=2,
-                     bg=couleurs[0], font=("Arial", 28, "bold"),
-                     relief="flat")
+                     bg=couleurs[0], font=("Arial", 28, "bold")
+                     relief="flat")    #relief ,supprime les bordures (style plat) : internet 
         l.grid(row=i, column=j, padx=6, pady=6)    # grid : internet
         ligne_labels.append(l)
     labels.append(ligne_labels)
 
 # boutons de direction , inspirer d'un article sur internet 
-cadre_dir = tk.Frame(fenetre, bg="#e993e5")
-cadre_dir.pack()
+cadre_dir = tk.Frame(fenetre, bg="#e993e5")  
+cadre_dir.pack()   
 
 tk.Button(cadre_dir, text="↑", width=4, font=("Arial", 14, "bold"),
           bg="#7d0b5b", fg="white",
@@ -346,7 +346,7 @@ tk.Button(cadre_ctrl, text="🐚Save", width=7, font=("Arial", 12, "bold"),
 tk.Button(cadre_ctrl, text="🌊Load", width=7, font=("Arial", 12, "bold"),
           bg="#f63ba8", fg="white", command=bouton_load).grid(row=0, column=2, padx=5)
 tk.Button(cadre_ctrl, text="🐠Exit", width=7, font=("Arial", 12, "bold"),
-          bg="#f63ba8", fg="white", command=bouton_exit).grid(row=0, column=3, padx=5)
+          bg="#f63ba8", fg="white", command=bouton_exit).grid(row=0, column=3, padx=5)       # grid : position dans la grille : verifier sur internet
 
 # touches du clavier
 fenetre.bind("<Left>",  lambda e: jouer(deplacer_gauche))     
