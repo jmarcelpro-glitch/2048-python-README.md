@@ -11,7 +11,7 @@ grille = [[0, 0, 0, 0],
 score = 0
 en_jeu = False
 
-# couleurs pour chaque valeur de tuile
+# couleurs pour chaque valeur de tuile , les couleurs sont prit de internet
 couleurs = {
     0:    "#e99ae0",
     2:    "#f7c4f2",
@@ -28,7 +28,7 @@ couleurs = {
 }
 
 
-# ---- fonctions de logique ----
+# ---- fonctions de logique ----  
 
 def cases_vides():
     vides = []
@@ -288,7 +288,7 @@ def bouton_exit():
     afficher_grille()
 
 
-# ---- creation de la fenetre ----
+# ---- creation de la fenetre ----   
 
 fenetre = tk.Tk()
 fenetre.title("2048")
@@ -318,7 +318,7 @@ for i in range(4):
         ligne_labels.append(l)
     labels.append(ligne_labels)
 
-# boutons de direction
+# boutons de direction , inspirer d'un article sur internet 
 cadre_dir = tk.Frame(fenetre, bg="#e993e5")
 cadre_dir.pack()
 
