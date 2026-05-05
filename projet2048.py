@@ -1,4 +1,4 @@
-import tkinter as tk
+import tkinter as tk        #  prithika
 from tkinter import messagebox, filedialog
 import random
 
@@ -80,10 +80,10 @@ def deplacer_gauche():
         if ligne != grille[i]:
             modifie = True
         grille[i] = ligne
-    return modifie
+    return modifie                
 
 
-def deplacer_droite():
+def deplacer_droite():         # syrine
     global score
     modifie = False
     for i in range(4):
@@ -138,7 +138,7 @@ def deplacer_haut():
     return modifie
 
 
-def deplacer_bas():
+def deplacer_bas():              # anya
     global score
     modifie = False
     for j in range(4):
@@ -167,7 +167,7 @@ def deplacer_bas():
     return modifie
 
 
-def partie_terminee():
+def partie_terminee():          # syrine
     # s'il reste des cases vides c'est pas fini
     if len(cases_vides()) > 0:
         return False
@@ -182,7 +182,7 @@ def partie_terminee():
 
 
 # ---- fonctions de l'interface ----
-
+# anya
 def afficher_grille():
     for i in range(4):
         for j in range(4):
