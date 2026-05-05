@@ -288,7 +288,7 @@ def bouton_exit():
     afficher_grille()
 
 
-# ---- creation de la fenetre ----   
+# ---- creation de la fenetre ---- > marcel
 
 fenetre = tk.Tk()
 fenetre.title("2048")
