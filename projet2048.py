@@ -11,7 +11,7 @@ grille = [[0, 0, 0, 0],
 score = 0
 en_jeu = False
 
-# couleurs pour chaque valeur de tuile , les couleurs sont prit surinternet
+# couleurs pour chaque valeur de tuile . Les couleurs sont prit sur internet
 couleurs = {
     0:    "#e99ae0",
     2:    "#f7c4f2",
