@@ -292,15 +292,15 @@ def bouton_exit():
 
 fenetre = tk.Tk()
 fenetre.title("2048")
-fenetre.configure(bg="#e993e5")
-fenetre.resizable(False, False)
+fenetre.configure(bg="#e993e5")  # #e993e5: internet 
+fenetre.resizable(False, False)   #  e993e5 : internet  
 
-tk.Label(fenetre, text="2048", font=("Arial", 40, "bold"),
-         bg="#e993e5", fg="#070105").pack(pady=10)
+tk.Label(fenetre, text="2048", font=("Arial", 40, "bold"),         # bold : internet 
+         bg="#e993e5", fg="#070105").pack(pady=10)      # 070105 : internet
 
 label_score = tk.Label(fenetre, text="Score : 0", font=("Arial", 16),
                        bg="#e993e5", fg="#070105")
-label_score.pack()
+label_score.pack()  
 
 # cadre de la grille
 cadre_grille = tk.Frame(fenetre, bg="#A83EA8", padx=8, pady=8)
@@ -314,7 +314,7 @@ for i in range(4):
         l = tk.Label(cadre_grille, text="", width=4, height=2,
                      bg=couleurs[0], font=("Arial", 28, "bold"),
                      relief="flat")
-        l.grid(row=i, column=j, padx=6, pady=6)
+        l.grid(row=i, column=j, padx=6, pady=6)    # grid : internet
         ligne_labels.append(l)
     labels.append(ligne_labels)
 
@@ -336,7 +336,7 @@ tk.Button(cadre_dir, text="→", width=4, font=("Arial", 14, "bold"),
           command=lambda: jouer(deplacer_droite)).grid(row=1, column=2, padx=4, pady=4)
 
 # boutons de controle
-cadre_ctrl = tk.Frame(fenetre, bg="#e993e5")
+cadre_ctrl = tk.Frame(fenetre, bg="#e993e5")   # frame : internet
 cadre_ctrl.pack(pady=12)
 
 tk.Button(cadre_ctrl, text="🌸Play", width=7, font=("Arial", 12, "bold"),
@@ -349,9 +349,9 @@ tk.Button(cadre_ctrl, text="🐠Exit", width=7, font=("Arial", 12, "bold"),
           bg="#f63ba8", fg="white", command=bouton_exit).grid(row=0, column=3, padx=5)
 
 # touches du clavier
-fenetre.bind("<Left>",  lambda e: jouer(deplacer_gauche))
+fenetre.bind("<Left>",  lambda e: jouer(deplacer_gauche))     
 fenetre.bind("<Right>", lambda e: jouer(deplacer_droite))
 fenetre.bind("<Up>",    lambda e: jouer(deplacer_haut))
 fenetre.bind("<Down>",  lambda e: jouer(deplacer_bas))
 
-fenetre.mainloop()
+fenetre.mainloop()   #  mainloop : internet
